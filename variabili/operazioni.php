@@ -32,6 +32,14 @@
         echo "<br>";
         // modulo % resto intero della divisione
         //5%2 vale 1
+        //il risultato intero è 2 e il resto è 1
+        echo "<br>";
+        echo $a >= $b;
+
+        //operatore ternario
+        echo "a = $a e b = $b ";
+        echo ($a >= $b ? ($a == $b ? "a uguale a b" : "a maggiore di b" ) : "b maggiore di a");
+        echo $risultato;
         ?>
     </body>
 </html>
