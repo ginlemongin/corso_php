@@ -28,7 +28,7 @@
         viene eseguita prima la moltiplicazione poi concatena il risultato, se vuoi essere sicuro aggiungi le parentesi*/
         echo "<br>";
         $s = "stringa";
-        echo $s + $a;
+        //echo $s + $a;
         echo "<br>";
         // modulo % resto intero della divisione
         //5%2 vale 1
@@ -38,8 +38,53 @@
 
         //operatore ternario
         echo "a = $a e b = $b ";
-        echo ($a >= $b ? ($a == $b ? "a uguale a b" : "a maggiore di b" ) : "b maggiore di a");
+        $risultato = ($a >= $b ? ($a == $b ? "a uguale a b" : "a maggiore di b" ) : "b maggiore di a");
         echo $risultato;
+        echo "<hr>";
+
+        // media tra $a e $b
+        $a=1;
+        $b=2;
+        echo "la media tra $a e $b è ". ($a+$b) / 2;
+        echo "<br>";
+
+        //invertire il contenuto di $a e $b
+        echo "prima a = $a e b = $b <br>";
+        $t = $a;
+        $a = $b;
+        $b = $t;
+        echo "dopo a = $a e b = $b <br>";
+        echo "<hr>";
+
+        //operatore ++ e --
+        $a = 2;
+        echo "prima a = $a <br> ";
+        //$a++; //$a = $a + 1; //restituisce $a e POI incrementa
+        //++$a; //PRIMA incremento il valore di a e restituisce il valore già incrementato
+        echo "dopo a = ". $a++;
+
+        echo "<hr>";
+
+        /*OPERATORI LOGICI
+        restituiscono vlaori booleani*/
+        $x = 100;
+        //$compreso = ($x>= $a) && /*AND*/($x <= $b);
+        echo (($x>= $a) && ($x <= $b)) ? 
+        "x compreso" 
+        : "x NON compreso";
+
+        echo "<br>";
+        //OR
+        $nome1 = "Mario";
+        $nome2 = "Giuseppe";
+        $nome = "Mario";
+
+        $nome_corretto = ( ($nome==$nome1) OR ($nome==$nome2) )?
+                 "nome corretto"
+                :"nome non corretto";
+        echo $nome_corretto;
+
+
         ?>
     </body>
 </html>
