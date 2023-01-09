@@ -64,6 +64,71 @@ function calcola($numero1, $numero2, $simbolo){
 }
 echo "esercizio 5: ";
 calcola($numero1, $numero2, $simbolo);
+
+/*Esercizio con le operazioni elementari
+Antonio, Bruno e Carlo sono andati a pranzo al ristorante, e hanno
+ordinato:
+• Antonio: tortellini in panna, €9.00, contorno di verdure,
+€5.00, caffè, €1.00
+• Bruno: gramigna con salsiccia, €8.00, contorno di verdure, €
+5.00, caffè, €1.00
+• Carlo: Hamburger, €11.00, patate fritte, €4.00, caffè, €1.00
+
+Quanto ha speso ogni persona? Quanto in totale? E quanto in media?
+Se decidessero di dividere in parti uguali, arrotondando all’euro,
+quanto lascerebbero di mancia?
+
+------------------------------------------------------------------------
+Un supermercato offre una politica di sconto ai propri clienti: 
+con l’acquisto di 3 prodotti applica il 10% di sconto sull’oggetto meno costoso. 
+Determinare il totale (imponibile + iva, supponendo l’iva al 22%)*/
+
+$p1=10; //costo prodotto 1
+$p2=9; //costo prodotto 2
+$p3=8; //costo prodotto 3
+
+
+//trovare il minore dei 3 costi
+echo "esercizio classroom";
+if ($p1<$p2){
+  if ($p1<$p3){
+    //echo"$p1 minore";
+    $p1=$p1-($p1*10/100);
+  }
+  else
+    //echo"$p3 minore";
+    $p3=$p3-($p3*10/100);
+}else{
+  if($p2<$p3){
+    //echo"$p2 minore";
+    $p2=$p2-($p2*10/100);
+  }else {
+    //echo"$p3 minore";
+    $p3=$p3-($p3*10/100);
+  }
+}
+echo '$p1 = '."$p1 <br>";
+echo '$p2 = '."$p1 <br>";
+echo '$p3 = '."$p1 <br>";
+
+//totale
+$totale = ($p1+$p2+$p3);
+echo "il totale vale: ". $totale;
+echo "<br>";
+
+//scorporare l'iva
+$iva = 10;
+
+$imponibile=$totale/(1+($iva/100));
+echo "imponibile";
+
+/*--------------------------------------------------------
+In una gara sportiva ci sono 3 giudici, ognuno dei quali esprime il proprio voto in un range da 0 a 10 
+(controllare che il voto sia compreso nel range prestabilito). 
+Il regolamento stabilisce che si scarti il voto più alto e che il punteggio finale sia dato dalla media dei voti rimanenti*/
 ?> 
     </body>
 </html>
+
+
+

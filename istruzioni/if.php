@@ -25,6 +25,7 @@
                  $m = $y;
             }
         echo "il massimo è " . $m;
+        //7/3 fa 2 con resto 1 se voglio arrivre all'intero successivo devo prendere quell' uno per arrivare al tre, 9/3 è intero.
         ?>
     </body>
 </html>
