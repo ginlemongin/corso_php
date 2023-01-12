@@ -51,12 +51,11 @@ echo "<br>giorni mancanti = $giorni_mancanti";
 
 //esercizio
 /*mostra quanti giorni mancano al tuo compleanno, prima valuto se è lo stesso mese,somma di ogni mese successivo quanti giorni mi servono*/
-date("d/m/Y");
-$m= date("m");
-switch($m){
+$my_birthday=6;
+$current_month= date("m");
+switch($current_month){
     case 2:
         $giorni_del_mese = 28;
-        break;
     case 4:
         $giorni_del_mese = 30;
     case 6:
@@ -69,6 +68,7 @@ switch($m){
     default:
         $giorni_del_mese = 31;
 }
+$difference = $giorni_del_mese - date("d");
 
       ?> 
     </body>
