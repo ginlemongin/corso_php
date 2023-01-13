@@ -70,6 +70,25 @@ switch($current_month){
 }
 $difference = $giorni_del_mese - date("d");
 
+//devo capire se il mese del mio compleanno è prima del mese in corso
+$i="";
+for ($i=0; $i <  $i++;) {
+    switch($current_month<$my_birthday){
+        case 2:
+            $giorni_del_mese = 28;
+        case 4:
+            $giorni_del_mese = 30;
+        case 6:
+            $giorni_del_mese = 30;
+        case 9:
+            $giorni_del_mese = 30;
+        case 11:
+            $giorni_del_mese = 30;
+            break;
+        default:
+            $giorni_del_mese = 31;
+    }
+}
       ?> 
     </body>
 </html>

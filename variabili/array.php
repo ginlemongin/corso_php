@@ -1,0 +1,1 @@
+<!-- sono un tipo di dato che permette di memorizzzare piu dati all'interno della variabile, larray è una cassettiera, la variabile un cassetto -->
