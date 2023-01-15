@@ -1,6 +1,6 @@
 <!-- Esercizio PHP
 
-Viene fornito un array di interi, dove ogni numero rappresenta l&#39;età degli abitanti di un piccolo
+Viene fornito un array di interi, dove ogni numero rappresenta letà degli abitanti di un piccolo
 comune. Si chiede di svolgere le seguenti attività:
 1. elencare tutte le età presenti nell&#39;array con uno sfondo alternato nelle varie righe,
 scrivendo in grassetto le età dei maggiorenni e in corsivo quelle dei minorenni (0
