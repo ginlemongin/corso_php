@@ -28,7 +28,15 @@
 
 
     //Invertire il contenuto di $x e $y
+    $x=5;
+    $y=3;
+    $q=0;
+
+        $q=$x;
+        $y=$q;
         
+        
+
     ?>
 </body>
 </html>
