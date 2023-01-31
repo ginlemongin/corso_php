@@ -45,7 +45,7 @@
             if ($partecipanti[$i]>=6) {
                 "<b>" . $partecipanti[$i] . "</b>";
             }
-            echo "<table>" . "<li>" . "<div style = background-color:$background_color>"  . $partecipanti[$i] . "</li>" . "<br>";
+            echo "<table>"  . "<div style = background-color:$background_color>" . "<li>" . $partecipanti[$i] . "</li>" . "<br>";
         }
         echo "partecipanti con voti massimi: " . "$voto_max" . "<br>";
         echo "media voti dei bocciati: " . $somma_voti_bocciati/$bocciati . "<br>";
