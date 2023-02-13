@@ -16,23 +16,23 @@
     */
 
     $numero_scelto = 3;
-    $estrazioni = 5;
-    $numeri_estratti = [];
+    $estrazioni = 5-1;
     $somma = 0;
     $media = 0;
 
     for ($i= 0; $i <= $estrazioni ; $i++) {
-        //inizializzo l'array con numeri casuali 
-        $numeri_estratti [$i] = rand(1,10);
-        echo $numeri_estratti [$i] . "<br>";
-        //devo sommare tutti gli elementi dell'array
-        $numeri_estratti [$i] +=  $numeri_estratti [$i];
-        
-
-        //$media =  $numeri_estratti [$i] / $estrazioni;
+        $r = rand(1,10);
+        $somma += $r;
     }
-    echo $numeri_estratti . "<br>";
-    //echo $media;
+    $media = $somma / $estrazioni;
+    $media_intera = ($somma - ($somma % $estrazioni)) / $estrazioni;
+
+    if($media_intera == $numero_scelto){
+        echo "hai vinto";
+    }
+    else{
+        echo "ritenta!";
+    }
     ?>
 </body>
 </html>
