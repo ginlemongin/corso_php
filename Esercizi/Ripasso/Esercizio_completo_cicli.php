@@ -31,31 +31,43 @@ devono considerare i numeri negativi.
 FACOLTATIVO: realizzare una seconda pagina identica alla precedente con una istruzione ciclica
 differente */
 
-    $start = 20;
+    $start = 10;
     $repeat = 2;
-
-    for ($repeat; $repeat >= 1; $repeat--) {
+    //la varibile $pari conta i numeri pari tra le cifre ed i loro doppi, gli sottraggo preventivamente il numero delle
+    //ripetizioni per 2 perchè altrimenti conterebbe anche gli 0 base e doppi
+    $pari = -$repeat*2;
+    $esecuzioni = 0;
+    for ($a=$repeat; $a >= 1; $a--) {
 
         for ($i = $start; $i >= 0; $i--) {
-            $double=$i*2;
-
-             if ($i % 2) {
-                if (date("m")==$i) {
-                    echo "<p style=background-color:#ccc><i>$i</i> $double</p>";
-                }else {
-                    echo "<p style=background-color:#ccc>$i $double</p>";
-                }
-                 
-             } else {
-                if (date("m")==$i) {
-                    echo "<p style=background-color:#fff><i>$i</i> $double</p>";
-                }else {
-                    echo "<p style=background-color:#fff>$i $double</p>";
-                }
+            $double = $i * 2;
+             $pari++;
+             $esecuzioni++;
+            
+             if ($i % 2 == 0) {
+                 $pari++;
              }
-           
+            if ($i % 2) {
+                if (date("m") == $i) {
+                    echo "<p style=background-color:#ccc><i>$i</i> <span style=color:red>$double</span></p>";
+                } else {
+                    echo "<p style=background-color:#ccc>$i <span style=color:red>$double</span></p>";
+                }
+
+            } else {
+
+                if (date("m") == $i) {
+                    echo "<p style=background-color:#fff><i>$i</i> <span style=color:red>$double</span></p>";
+                } else {
+                    echo "<p style=background-color:#fff>$i <span style=color:red>$double</span></p>";
+                } 
+            }
+        }
     }
-}
+    echo "<hr>";
+    echo '$start:' . $start . "<br>" . '$repeat:' . $repeat . "<br>";
+    echo "numeri pari:" . $pari . "<br>";
+    echo "numero esecuzioni:" . $esecuzioni;
     ?>
 </body>
 
