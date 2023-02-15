@@ -77,8 +77,9 @@
     // // per farlo devo passargli l'array per dirgli in modo dinamico quanti voti
     // // e di che valore sono ($a è l'array dunque, $s è il voto minimo sufficiente)
     // // questi sono i due valori fondamentali per poter eseguire questa funzione
-    // function media_promossi($a, $s)
-    // { // inizializzo dei valori dentro la funzione
+
+    // function media_promossi($a, $s){
+    //  // inizializzo dei valori dentro la funzione
     //     $somma = 0; 
     //     $i = 0;
     //     foreach ($a as $voto) {
