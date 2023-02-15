@@ -10,8 +10,8 @@
 
 <body>
     <?php
-
-    //AVVIO ES. ALTERNATIVO PER CASA
+/*
+  //AVVIO ES. ALTERNATIVO PER CASA
     $s1 = ['cognome' => 'Rossi', 'nome' => "Mario", 'corso' => "Autocad"];
     $s2 = ['cognome' => 'Rossini', 'nome' => "Mariolino", 'corso' => "Inglese"];
     $s3 = ['cognome' => 'Bossi', 'nome' => "Maria", 'corso' => "Informatica"];
@@ -58,6 +58,7 @@
      * Restituisce la stringa con tutti i dati dello studente
      * @return string
      */
+    /*
     function elenco_dati_studente($array)
     {
         // per sapere quale array deve scorrere la mia funzione devo aggiungerne uno tra le parentesi
@@ -76,6 +77,7 @@
  * @param string $corso nome del corso da cercare
  * @return int totale studenti del corso
 */
+/*
     function count_studenti_corso($studenti, $corso){
         // anche se riutilizzo gli stessi nomi delle variabili, dentro alla function
         // sono comunque come delle variabili completamente separate!
@@ -88,8 +90,57 @@
         return $tot;
     }
 
+//appunti docente
+/**$s1 = ['nome' => "Mario", 'cognome' => "Rossi", 'voto' => 10];
+    $s2 = ['nome' => "Giacomo", 'cognome' => "Verdi", 'voto' => 10];
+    $s3 = ['nome' => "Maria", 'cognome' => "Rossini", 'voto' => 5];
+    $s4 = ['nome' => "Osvaldo", 'cognome' => "Faustini", 'voto' => 3];
+
+    $s = [$s1, $s2, $s3, $s4];
+
+    //print_r($s);
+    ?>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Voto</th>
+        </tr>
+        <?php
+        foreach ($s as $studente) {
+            //print_r($studente);
+            echo "<tr>";
+            echo "<td>";
+            echo $studente['nome'];
+            echo "</td> <td>";
+            echo $studente['cognome'];
+            echo "</td> <td>";
+            echo $studente['voto'];
+            echo "</td>";
+            echo "</tr>";
+
+        }
+        echo "</table>";
 
 
+
+        //PER CASA creare la tabella sopra 
+        //senza conoscere le chiavi dei singoli elementi di $s
+        //2 foreach innestati
+        //da fare senza leggere sotto
+        
+
+        echo "<table>";
+        foreach ($s as $studente) {
+            echo "<tr>";
+            foreach ($studente as $k => $v) {
+                echo "<td> $v</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>"; */
+
+        
     ?>
 </body>
 

@@ -12,7 +12,7 @@
     <?php
     /* ARRAY BIDIMENSIONALI
     Fin ora abbiamo visto solo array con un solo valore dentro ciascun indice/chiave, 
-    ma ci sono anche quelli con piu dimensioni (bidimensionali e multidimensionali)*/
+    ma ci sono anche quelli con piu dimensioni (bidimensionali e multidimensionali)
     $studente0 = ['nome' => "mario", 'cognome' => "rossi", 'voto' => 10];
     $studente1 = ['nome' => "luigi", 'cognome' => "verdi", 'voto' => 8];
 
@@ -66,11 +66,11 @@
     echo "<br>";
     // tabella THML dentro la quale inserisco i dati
     echo "<table>";
-    echo "<tr>";
+    echo "<thead>";
     echo "<th>Nome</th>";
     echo "<th>Cognome</th>";
     echo "<th>Voto</th>";
-    echo "</tr>";
+    echo "</thead>";
 
     foreach ($s as $studente) { //chiamiamo $studente il $a di $i di ciascun elemento per scorrerli
         // print_r ($studente);
@@ -84,26 +84,31 @@
     echo "</table>";
     echo "<hr>";
 
-
+/**/
     // ESERCIZIO PER CASA
     // creare la tabella sopra senza conoscere le chiavi dei singoli elementi di $s
     // (basically due for each innestati)
+    $studente1 = ["Mario",   "Rossi",     10];
+    $studente2 = ["Luigi",   "Verdi",      8];
+    $studente3 = ["Maria",   "Rossini",    5];
+    $studente4 = ["Osvaldo", "Faustini",   3];
+
+    $studenti = [$studente1, $studente2, $studente3, $studente4]; //questo bad mf li contiene tutti!
     echo "<table>";
-    echo "<thead>";
-    echo "<th>Nome</th>";
-    echo "<th>Cognome</th>";
-    echo "<th>Voto</th>";
-    echo "</thead>";
-    foreach ($s as $studente) { //il primo ciclo scorre tutti gli elementi del primo array principale (i nomi degli studenti)
+        echo"<thead>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Voto</th>
+            </thead>";
+        
+    foreach ($studenti as $studente) {
         echo "<tr>";
-        foreach ($studente as $dati => $dato) { //il secondo dice che per ogni studente scorro tutti gli elementi che lo contraddistinguono
-            //gli dico di stampare tutti i singoli valori contenuti negli array interni degli studenti
-            echo "<td> $dato </td>";
+        foreach ($studente as $dato => $valore) {
+            echo "<td>$valore</td>";
         }
         echo "</tr>";
     }
-    echo "</table>";
-
+    "</table>";
     ?>
 </body>
 
