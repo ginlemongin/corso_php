@@ -87,11 +87,13 @@
                 //ogni volta che l'indice è un categoria pusha nell'array
                 if ($key == "categoria") {
                     
+                    
                     $categorie[]=$value;
                     
                 }
 
             }
+
         }
         
         $categoria_max = [];
