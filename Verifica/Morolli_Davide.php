@@ -135,6 +135,7 @@ creare una funzione che possa essere utilizzata nei punti 2 e 4; elencare il con
     allora quello del mese scorso sarebbe di 9.800€, quello del mese prima 9.600€ e cosi via). 
     Elencare il contenuto di questo array.
     */
+    
     //la vita non aspetta, il tempo non basta mai
 
     /*
