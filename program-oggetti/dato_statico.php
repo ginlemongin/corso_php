@@ -10,44 +10,7 @@
 
 <body>
     <?php
-
-    // CREO UNA CLASSE
-    class Esempio
-    {
-        // una classe è un contenitore di proprietà e metodi
-        // è ciò che i suoi oggetti possono fare e contengono
-        // ma di default non fa nulla, sta ferma come un sasso
-
-        public $stringa = ""; 
-        //inizializzo sempre le variabili che uso dentro la classe
-
-        function stampa_qualcosa($stringa)
-        {
-            echo $stringa . "<br>";
-        }
-
-        function stampa_qualcosa_in_grassetto($stringa)
-        {
-            echo "<b>";
-            echo $this->stampa_qualcosa($stringa);
-            // richiama una funzione presente in QUESTA classe
-            echo "</b><br>";
-        }
-    }
-    $e = new Esempio();
-    // questo oggetto funziona correttamente, 
-    // anche se la classe esempio è vuota e non ha costruttore!
-    // ovviamente però, una classe senza funzionalità non ci serve a niente...
-
-    // posso scegliere se usare le due funzioni della classe di appartenenza di $e
-    $e->stampa_qualcosa("L M A O");
-    $e->stampa_qualcosa_in_grassetto("L M A O");
-
-    // voglio cambiare il nome della stringa della classe (che è pubblica)
-    $e->stringa = "Nuovo valore di stringa";
-    // poi lo stampo in grassetto
-    $e->stampa_qualcosa_in_grassetto($e->stringa);
-    echo "<hr>";
+//dato statico è staticamente riferito alla classe(quindi riguarda tutti gli oggetti) e non ai singoli oggetti istanziati, possono esserci metodi e proprietà statiche
 
 
 
@@ -56,6 +19,9 @@
     //se istanzio un nuovo oggetto lui cerca il metodo cotruttore dentro la classe persona, se c'è lui la esegue altrimenti non fa nulla
     $p1 = new Persona;
     $p2 = new Persona;
+    //chiamo funzione static ma non posso usare la freccia perchè quella è del singolo oggetto
+    $eta = Persona::eta('2000-01-01');
+    echo Persona::SPECIE;
     //stai chiamando un metodo
     $p -> mioMetodo();
     //lo puoi fare solo se $nome è public
@@ -66,11 +32,15 @@ echo$p ->getNome("pippo");
 
     class Persona{
         private$nome;
+        //definisci una costante all'interno della classe
+        const SPECIE = "essere umano";
         //con la public puoi accedere alla variabile anche dall' esterno
         public $nome
         //metodo cotruttore
         function __construct(){
             echo "istanziato nuovo oggetto"
+            $this->setNOme($s);
+            echo SPECIE;
         }
         function mioMetodo(){
         }
@@ -82,8 +52,17 @@ echo$p ->getNome("pippo");
             //ti ritorna pippo
             return $this->nome;
         }
+        //qualsiasi funzione che ha dei dati che non dipendono da this possono diventare static, la differenza è che posso richiamare la funzione static posso anche nbon chiamare nulla
+        static public $numero;
+        static function eta($data){
+
+        }
     }
 //il metodo costruttore viene chiamato quando si istanzia un nuovo oggetto, non è obbligatorio ma quando enetrerà nella classe non farà nulla.
+
+//differenza funzioni classi: le classi hanno la caratteristica di raggruppare caratteristiche comuni che sono funzioni, e poi richiamando la classe hai raggrupapte una serie di unzioni 
+//che poi non devi usare tutte insieme
+//e se modifichi la classe modifichi la funzione e di conseguenza gli output ovuinque li hai usati
     ?>
 </body>
 
