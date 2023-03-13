@@ -37,69 +37,25 @@ INNER JOIN citta ON regioni.id_regione = citta.regione
 WHERE area_geografica = 'Sud'
 */
 
-/**facciamo select all perchè verrano scremati nella funzioen elenca_records i risultati*/
-   $citta_sud = query("SELECT * 
+    /**facciamo select all perchè verrano scremati nella funzioen elenca_records i risultati*/
+    $citta_sud = query(
+        "SELECT citta.citta, regioni.regione, regioni.area_geografica,  regioni.ID_regione
             FROM regioni
             INNER JOIN citta ON regioni.id_regione = citta.regione
             WHERE area_geografica = 'Sud'"
-            );
+    );
 
     /**gli passiamo come argomenti un array ed una stringa*/
-   elenca_records($citta_sud, 'citta');
+    elenca_records($citta_sud, 'citta');
 
-   /**3. Indicare il numero di città elencate */
-   conta_elementi($citta_sud);
+    /**3. Indicare il numero di città elencate */
+    conta_elementi($citta_sud);
 
-   /**4. Scrivere la regione del Sud con più città collegate */
-   function numero_citta($citta_sud)
-   {
-       $abruzzo = 0;
-       $basilicata = 0;
-       $calabria = 0;
-       $campania = 0;
-       $molise = 0;
-       $puglia = 0;
+    /**4. Scrivere la regione del Sud con più città collegate */
+    numero_citta($citta_sud);
 
-       foreach ($citta_sud as $citta) {
-           foreach ($citta as $valore) {
-               switch ($valore) {
-                   case "Abruzzo":
-                       $abruzzo++;
-                       break;
-                   case "Basilicata":
-                       $basilicata++;
-                       break;
-                   case "Calabria":
-                       $calabria++;
-                       break;
-                   case "Campania":
-                       $campania++;
-                       break;
-                   case "Molise":
-                       $molise++;
-                       break;
-                   case "Puglia":
-                       $puglia++;
-                       break;
-               }
-           }
-       }
-       $regioni = array ("Abruzzo" => $abruzzo, 
-       "Basilicata" => $basilicata, 
-        "calabria" => $calabria,
-        "campania" => $campania,
-        "molise" => $molise,
-        "puglia" => $puglia);
-
-       foreach ($regioni as $k => $v){
-           $regione_max = max($v);
-       }
-
-       $regione_max = max($regioni);
-       return $regione_max;
-   }
-
-   echo numero_citta($citta_sud);
+    /*5. Definire la classe Regione con le proprietà nome (privata)
+      e numeroCittaCollegate (pubblica).*/
     ?>
 </body>
 
