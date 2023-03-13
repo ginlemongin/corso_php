@@ -29,7 +29,9 @@ In particolare, le operazioni richieste sono le seguenti:
 
     /*2. Elencare tutte il nome delle città del Sud*/
 
-    /**facciamo select all perchè verrano scremati nella funzioen elenca_records i risultati*/
+    /////**facciamo select all perchè verrano scremati nella funzioen elenca_records i risultati*/
+    /*non posso fare select all altrimenti ci saà il campo regione duplicato e
+    da problemi con l'array associativo*/
     $citta_sud = query(
         "SELECT citta.citta, regioni.regione, regioni.area_geografica,  regioni.ID_regione
             FROM regioni
@@ -44,26 +46,16 @@ In particolare, le operazioni richieste sono le seguenti:
     conta_elementi($citta_sud);
 
     /**4. Scrivere la regione del Sud con più città collegate */
-    numero_citta($citta_sud);
+    numero_citta_sud($citta_sud);
 
     /*5. Definire la classe Regione con le proprietà nome (privata)
       e numeroCittaCollegate (pubblica).*/
-      class Regione
-      {
-        private $nome;
-        public $numeroCittaCollegate;
+    /**6. Definire il metodo che accede al database e valorizza la proprietà numeroCittaCollegate. */
+    $campania = new Regione("Lombardia");
+    echo $campania->cittaCollegate();
 
-        /**6. Definire il metodo che accede al database e valorizza la proprietà numeroCittaCollegate. */
-        function cittaCollegate(){
-            //guardo su code academi come valorizzare gli oggetti
-            
-
-        }
-
-      }
-    
-      
-      
+    //perchè il metodo città collegate funziona anche se non ho fatto l'include di connessione_db nel
+    //file funzioni.php?
     ?>
 </body>
 
