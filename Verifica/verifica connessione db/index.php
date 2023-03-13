@@ -19,23 +19,15 @@ In particolare, le operazioni richieste sono le seguenti:
 //2. Elencare tutte il nome delle città del Sud
 //3. Indicare il numero di città elencate
 //4. Scrivere la regione del Sud con più città collegate
-5. Definire la classe Regione con le proprietà nome (privata) e numeroCittaCollegate
-(pubblica).
-6. Definire il metodo che accede al database e valorizza la proprietà
-numeroCittaCollegate.
+//5. Definire la classe Regione con le proprietà nome (privata) e numeroCittaCollegate(pubblica).
+//6. Definire il metodo che accede al database e valorizza la proprietànumeroCittaCollegate.
      */
 
     /**prima di tutto includo gli altri file alla pagina html dove farò le operazioni per manipolare i dati */
     include("include/connect_db.php");
     include("include/funzioni.php");
 
-    /*2. Elencare tutte il nome delle città del Sud
-//query punto2 
-SELECT citta.citta
-FROM regioni
-INNER JOIN citta ON regioni.id_regione = citta.regione
-WHERE area_geografica = 'Sud'
-*/
+    /*2. Elencare tutte il nome delle città del Sud*/
 
     /**facciamo select all perchè verrano scremati nella funzioen elenca_records i risultati*/
     $citta_sud = query(
@@ -56,6 +48,22 @@ WHERE area_geografica = 'Sud'
 
     /*5. Definire la classe Regione con le proprietà nome (privata)
       e numeroCittaCollegate (pubblica).*/
+      class Regione
+      {
+        private $nome;
+        public $numeroCittaCollegate;
+
+        /**6. Definire il metodo che accede al database e valorizza la proprietà numeroCittaCollegate. */
+        function cittaCollegate(){
+            //guardo su code academi come valorizzare gli oggetti
+            
+
+        }
+
+      }
+    
+      
+      
     ?>
 </body>
 

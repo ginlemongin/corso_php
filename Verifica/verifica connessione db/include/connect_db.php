@@ -6,6 +6,7 @@ function connessione()
     /**creo un variabile globale che serve per la connessione */
     global $connessione;
 
+    /**indico i dati del mio database */
     $dsn = "mysql:dbname=ifts;host=127.0.0.1";
 
     /*per gestire le eccezioni */
