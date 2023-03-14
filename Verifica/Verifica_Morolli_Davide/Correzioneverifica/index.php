@@ -1,5 +1,6 @@
 <?php
 include("funzioni.php");
+include("Prenotazione.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +33,7 @@ include("funzioni.php");
     echo "Totale prenotazioni: " . count($righe) . "<hr>";
     foreach ($righe as $riga) {
         //echo data_db_2_user($riga['arrivo']) . " " . data_db_2_user($riga['partenza']) . "<br>";
+        $p = new Prenotazione($riga['arrivo'], $riga['partenza']);
     }
 
     //cerco il max
