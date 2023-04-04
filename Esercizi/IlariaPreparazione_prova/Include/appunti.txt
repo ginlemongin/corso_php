@@ -1,0 +1,7 @@
+include ("fz.php")- includo nel mio codice un file php di funzioni (libreria) già definite e codificate
+include_once("fz.php") - evito di includere più volte lo stesso file (cosa che puo capitare quando altre librerie richiamano ltre librerie, ...)
+include_once("./fz.php"); il php cerca il file nel path indicato: se il file non c'è o non c'è il path, il compilatore genera un warning e poi prova a continuare 
+require("fz1.php"); il php cerca il file nel path indicato: se il file non c'è o non c'è il path, il compilatore termina l'esecuzione
+requide_once("fz1.php"); come per include_once 
+@ silenzia i warning
+@include("file-che-non-ce.php") nasconde il warning
