@@ -50,6 +50,8 @@ quelli inseriti nel form precedente. */
                 }
             }
             echo "Ciao " . $nome . " " . $cognome . "<br>";
+
+            /**nel link per il cambio passoword inserisco la pagina ed il parametro per la get */
             echo "<a href='./cambioPassword.php?id=$id'><button>Cambio Password</button></a>";
             break;
     }
