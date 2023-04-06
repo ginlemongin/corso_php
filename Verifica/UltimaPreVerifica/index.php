@@ -61,24 +61,24 @@ CREATE TABLE `utenti` (
      ('Claudia', 'Benvoglio', 'cbenvoglio@libero.it', '1234'),
      ('Marianna', 'Rametti', 'mrametti@libero.it', '12abc')"
     );
-    */
+    
 
 /*connessione al db per punto 1 */
     $dsn = "mysql:dbname=ifts;host=127.0.0.1";
 
     try {
         $connessione = new PDO($dsn, "root", "");
-        //$sql ="SELECT * FROM utenti";
-        $sql = "CREATE TABLE `utenti` (
-            `ute_id` int(11) NOT NULL AUTO_INCREMENT,
-            `ute_nome` varchar(50) NOT NULL,
-            `ute_cognome` varchar(50) NOT NULL,
-            `ute_email` varchar(150) NOT NULL,
-            `ute_password` varchar(20) NOT NULL,
-            `ute_icona` varchar(100) DEFAULT NULL,
-            `ute_cv` varchar(100) DEFAULT NULL,
-            PRIMARY KEY (ute_id)
-            )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=UTF8_GENERAL_CI";
+        $sql ="SELECT * FROM utenti";
+        // $sql = "CREATE TABLE `utenti` (
+        //     `ute_id` int(11) NOT NULL AUTO_INCREMENT,
+        //     `ute_nome` varchar(50) NOT NULL,
+        //     `ute_cognome` varchar(50) NOT NULL,
+        //     `ute_email` varchar(150) NOT NULL,
+        //     `ute_password` varchar(20) NOT NULL,
+        //     `ute_icona` varchar(100) DEFAULT NULL,
+        //     `ute_cv` varchar(100) DEFAULT NULL,
+        //     PRIMARY KEY (ute_id)
+        //     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=UTF8_GENERAL_CI";
        
        
         $statement = $connessione->prepare($sql);
@@ -114,13 +114,6 @@ CREATE TABLE `utenti` (
         <button type="submit">Accedi</button>
 
     </form>
-
-    <?php
-    
-    /**3. Selezionare dalla tabella utenti i record che hanno nei campi users e password
-    quelli inseriti nel form precedente.
-    */   
-    ?>
 
 
 
